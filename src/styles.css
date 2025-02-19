@@ -1,0 +1,22 @@
+.industry-slider .slick-dots li button:before {
+  color: white;
+}
+
+.industry-slider .slick-prev,
+.industry-slider .slick-next {
+  z-index: 10;
+}
+
+.industry-slider .slick-prev {
+  left: -25px;
+}
+
+.industry-slider .slick-next {
+  right: -25px;
+}
+
+.industry-slider .slick-prev:before,
+.industry-slider .slick-next:before {
+  font-size: 24px;
+  color: white;
+}

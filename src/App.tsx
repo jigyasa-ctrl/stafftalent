@@ -199,8 +199,8 @@ function App() {
                         stiffness: 100 
                       }}
                     >
-                      Transform Your Business
-                      <br />with AI Solutions
+                      Empowering Businesses  
+                      <br />with Cutting-Edge Tech Solutions
                     </motion.h1>
                     <motion.p 
                       className="p-color text-xl mb-8 max-w-2xl mx-auto"
@@ -208,7 +208,7 @@ function App() {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                      Leverage the power of artificial intelligence to optimize your operations,
+                      Helping businesses innovate, optimize their operations,
                       enhance customer experience, and drive growth
                     </motion.p>
                     <motion.button

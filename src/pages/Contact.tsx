@@ -150,7 +150,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-blue-400 mt-1" />
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-                  <p className="text-gray-300">+1 (555) 123-4567</p>
+                  <p className="text-gray-300">+1 (318) 500-3479</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -201,7 +201,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-400"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+1 (318) 500-3479"
                   required
                 />
               </div>

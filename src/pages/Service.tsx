@@ -10,7 +10,6 @@ import finance from "../../assets/finance.jpg"
 import manufacturing from "../../assets/manufacturing.jpg"
 import education from "../../assets/education.jpg"
 import realestate from "../../assets/realestate.jpg"
-import energy from "../../assets/energy.jpg"
 import agriculture from "../../assets/agriculture.jpg"
 import telecommunication from "../../assets/telecommunication.jpg"
 import testimonial1 from "../../assets/testimonial1.jpg"
@@ -18,6 +17,9 @@ import testimonial2 from "../../assets/testimonial2.jpg"
 import testimonial3 from "../../assets/testimonial3.jpg"
 import testimonial4 from "../../assets/testimonial4.jpg"
 import code from "../../assets/code4.mp4"
+import ecommerce from "../../assets/ecommerce.webp"
+import technology from "../../assets/technology.jpg"
+import ai from "../../assets/ai.jpeg"
 
 
 const industries = [
@@ -47,9 +49,9 @@ const industries = [
     description: "Property management and real estate platforms. Offering virtual tour solutions, automated property valuation systems, tenant management software, and smart building integration systems."
   },
   {
-    title: "Energy",
-    image: energy,
-    description: "Smart grid solutions and energy management systems. Specializing in renewable energy monitoring, consumption optimization, predictive grid maintenance, and sustainable energy distribution platforms."
+    title: "E-commerce",
+    image: ecommerce,
+    description: "Comprehensive e-commerce solutions including online store development, payment gateway integration, inventory management systems, customer engagement strategies, analytics dashboards."
   },
   {
     title: "Agriculture",
@@ -60,6 +62,16 @@ const industries = [
     title: "Telecommunications",
     image: telecommunication,
     description: "Network solutions and communication systems. Providing 5G infrastructure management, network optimization tools, unified communications platforms, and advanced data routing solutions."
+  },
+  {
+    title: "Technology",
+    image: technology,
+    description: "Cutting-edge technology solutions including AI/ML development, cloud computing, DevOps automation, and custom software development. Helping businesses leverage the tech."
+  },
+  {
+    title: "Artificial Intelligence",
+    image: ai,
+    description: "State-of-the-art AI solutions including machine learning models, natural language processing, computer vision, and predictive analytics. Helping businesses automate processes and gain valuable insights."
   }
 ];
 
@@ -174,6 +186,22 @@ const Services = () => {
             initial="hidden"
             animate={heroInView ? "visible" : "hidden"}
             variants={fadeIn}
+            transition={{ duration: 0.5 }}
+            className="card-hover bg-gray-900 p-6 rounded-xl border border-gray-800 relative overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F40218] to-[#1603EC] transition-transform duration-500 ease-in-out origin-bottom-left -rotate-45 scale-0 group-hover:scale-150" />
+            <div className="relative z-10">
+              <Code className="w-12 h-12 text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Placements & Training</h3>
+              <p className="text-gray-400">Expert IT staffing solutions and comprehensive technical training programs to help businesses build high-performing teams.</p>
+            </div>
+          </motion.div>
+
+
+          <motion.div
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+            variants={fadeIn}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="card-hover bg-gray-900 p-6 rounded-xl border border-gray-800 relative overflow-hidden group"
           >
@@ -219,6 +247,21 @@ const Services = () => {
             initial="hidden"
             animate={heroInView ? "visible" : "hidden"}
             variants={fadeIn}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="card-hover bg-gray-900 p-6 rounded-xl border border-gray-800 relative overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F40218] to-[#1603EC] transition-transform duration-500 ease-in-out origin-bottom-left -rotate-45 scale-0 group-hover:scale-150" />
+            <div className="relative z-10">
+              <LineChart className="w-12 h-12 text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Business Analytics</h3>
+              <p className="text-gray-400">Leverage data-driven decision making with comprehensive business intelligence, predictive modeling, and strategic planning solutions.</p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+            variants={fadeIn}
             transition={{ duration: 0.5, delay: 0.8 }}
             className="card-hover bg-gray-900 p-6 rounded-xl border border-gray-800 relative overflow-hidden group"
           >
@@ -244,6 +287,22 @@ const Services = () => {
               <p className="text-gray-400">Protect your digital assets with our comprehensive security solutions and consulting services.</p>
             </div>
           </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+            variants={fadeIn}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            className="card-hover bg-gray-900 p-6 rounded-xl border border-gray-800 relative overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F40218] to-[#1603EC] transition-transform duration-500 ease-in-out origin-bottom-left -rotate-45 scale-0 group-hover:scale-150" />
+            <div className="relative z-10">
+              <Database className="w-12 h-12 text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold mb-2"> Technology Support</h3>
+              <p className="text-gray-400">24/7 technical support, system maintenance, and IT infrastructure management to keep your business running smoothly.</p>
+            </div>
+          </motion.div>
+         
         </div>
       </div>
 

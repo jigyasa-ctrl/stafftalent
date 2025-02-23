@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Brain, Cpu, Database, LineChart } from 'lucide-react';
 import { Footer } from './components/Footer';
-import { PytorchPlainWordmark, GithubactionsOriginal,JenkinsOriginal, GitlabOriginal, GrafanaPlainWordmark, BitbucketOriginalWordmark, AmazonwebservicesPlainWordmark, NodejsPlainWordmark,  FlutterOriginal, MaterialuiPlain, LaravelOriginalWordmark,MysqlPlainWordmark,DjangoPlain, BootstrapPlainWordmark,AxiosPlainWordmark, PhpOriginal, ReactOriginal, Html5Original, AngularOriginal, FastapiPlain,  TensorflowLineWordmark, ApachesparkPlainWordmark, KerasPlainWordmark, MatlabPlain, NumpyPlainWordmark,MatplotlibPlainWordmark, PandasPlainWordmark } from 'devicons-react';
+import { PytorchPlainWordmark,OracleOriginal,SalesforcePlain, GithubactionsOriginal,JenkinsOriginal, GitlabOriginal, GrafanaPlainWordmark, BitbucketOriginalWordmark, AmazonwebservicesPlainWordmark, NodejsPlainWordmark,  FlutterOriginal, MaterialuiPlain, LaravelOriginalWordmark,MysqlPlainWordmark,DjangoPlain, BootstrapPlainWordmark,AxiosPlainWordmark, PhpOriginal, ReactOriginal, Html5Original, AngularOriginal, FastapiPlain,  TensorflowLineWordmark, ApachesparkPlainWordmark, KerasPlainWordmark, MatlabPlain, NumpyPlainWordmark,MatplotlibPlainWordmark, PandasPlainWordmark } from 'devicons-react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from '../assets/logo4.png'
 import code from "../assets/code3.mp4"
@@ -15,11 +15,45 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Services from './pages/Service';
+import Hiring from './pages/Hiring';
+import Positions from "./Positions"
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
 };
+
+const frontend = {
+  title: "Frontend Developer",
+  description: `We are seeking a talented Frontend Developer to join our innovative team. The ideal candidate will have:
+
+### Qualifications:
+- 3+ years of experience with modern JavaScript frameworks (particularly React)
+- Strong proficiency in TypeScript, HTML5, CSS3/SCSS, ReactJS
+- Experience with state management (Redux, Context API)
+
+### Key Responsibilities:
+- Develop and maintain responsive web applications using React
+- Collaborate with UX/UI designers to implement pixel-perfect interfaces
+
+Interested ? Send your resumes to us at hr@stafftalentssolutions.com` ,
+}
+
+const backend = {
+  title: "Backend Developer",
+  description: `We are looking for a skilled Backend Developer to join our dynamic team. The ideal candidate will have:
+
+### Qualifications:
+- 3+ years of experience with server-side languages (Node.js, Python, Java, etc.)
+- Strong proficiency in database management (SQL, NoSQL)
+- Experience with RESTful APIs and microservices architecture
+
+### Key Responsibilities:
+- Design and implement server-side logic and APIs
+- Collaborate with frontend developers to integrate user-facing elements with server-side logic
+
+Interested ? Send your resumes to us at hr@stafftalentssolutions.com` ,
+}
 
   // Add scroll handler
 
@@ -56,7 +90,7 @@ function AnimatedNumber({ value, suffix = '' }: { value: string, suffix?: string
   );
 }
 
-function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
+function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: any }) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -87,11 +121,44 @@ function App() {
     threshold: 0.1
   });
 
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: 'smooth' });
+  const texts = [
+    "Empowering Businesses with Cutting-Edge AI Solutions, Data Analytics, and Future-Ready Innovation.",
+    "100% success in placements ",
+    "Tailored Solutions for Hiring Success.",
+    "Innovating Pathways for Career Development.",
+    "AI Solutions Tailored for Your Business.",
+    "Driving Efficiency through Technology.",
+    "Transforming Ideas into Reality.",
+    "Empowering Companies to Find the Right Talent.",
+  ];
+  
+  const [displayedText, setDisplayedText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    if (textIndex < texts.length) {
+      const currentText = texts[textIndex];
+      if (charIndex < currentText.length) {
+        const timer = setTimeout(() => {
+          setDisplayedText((prev) => prev + currentText[charIndex]);
+          setCharIndex((prev) => prev + 1);
+        }, 50); // Adjust typing speed here
+        return () => clearTimeout(timer);
+      } else {
+        const timer = setTimeout(() => {
+          setTextIndex((prev) => (prev + 1) % texts.length); // Loop back to the start
+          setCharIndex(0);
+          setDisplayedText(""); // Clear text for next one
+        }, 500); // Pause before showing the next text
+        return () => clearTimeout(timer);
+      }
     }
+  }, [textIndex, charIndex, texts]);
+
+  const scrollToServices = () => {
+    // Open the specified URL in a new tab
+    window.open('https://calendly.com/stafftalents-work/30min', '_blank');
   };
   
   const dataScience = [
@@ -119,6 +186,12 @@ function App() {
     <LaravelOriginalWordmark color='white' size="100" />,
     <FlutterOriginal color='white' size="50" />,
     <NodejsPlainWordmark  color='white' size="100" />,
+    <OracleOriginal  color='white' size="100" />,
+    <img src="./assets/servicenow.png" height={50} width={50} />,
+    <img src="./assets/powerbi.png" height={50} width={50} />,
+    <img src="./assets/googlecloud.png" height={50} width={50} />,
+    <img src="./assets/go.png" height={100} width={100} />,
+    <SalesforcePlain size='100' />
   ]
   const devOps = [
     <GitlabOriginal  color='white' size="50" />,
@@ -131,6 +204,11 @@ function App() {
   ]
 
   const [selectedTab, setSelectedTab] = React.useState(0);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(prevState => !prevState);
+  };
 
   return (
     <Router>
@@ -147,16 +225,42 @@ function App() {
               </div>
               
               {/* Navigation */}
-              <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-gray-300 text-xl hover:text-white transition-colors">Home</Link>
+              <nav className="hidden md:flex items-center space-x-8 ">
+                <Link to="/" className="text-gray-300 text-xl hover:text-white transition-colors">Home</Link>
                 <Link to="/about" className="text-gray-300 text-xl hover:text-white transition-colors">About</Link>
                 <Link to="/services" className="text-gray-300 text-xl hover:text-white transition-colors">Services</Link>
                 <Link to="/blog" className="text-gray-300 text-xl hover:text-white transition-colors">Blog</Link>
                 <Link to="/contact" className="text-gray-300 text-xl hover:text-white transition-colors">Contact</Link>
+                <Link to="/hiring" className="text-gray-300 text-xl hover:text-white transition-colors">Hiring</Link>
               </nav>
+              {/* Hamburger Icon for Mobile */}
+              <div className="md:hidden flex items-center">
+                <button onClick={toggleNav} className="text-gray-300">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </header>
+
+        {/* Mobile Navigation */}
+        {isNavOpen && (
+          <div 
+            className="md:hidden flex flex-col items-center space-y-2 transition-all duration-300 ease-in-out transform translate-y-0 opacity-100 mx-lg bg-gray-900 py-5"
+            // initial={{ opacity: 0, y: -20 }}
+            // animate={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 0.5 }}
+          >
+            <Link to="/" className="text-gray-300 text-xl hover:text-white transition-colors">Home</Link>
+            <Link to="/about" className="text-gray-300 text-xl hover:text-white transition-colors">About</Link>
+            <Link to="/services" className="text-gray-300 text-xl hover:text-white transition-colors">Services</Link>
+            <Link to="/blog" className="text-gray-300 text-xl hover:text-white transition-colors">Blog</Link>
+            <Link to="/contact" className="text-gray-300 text-xl hover:text-white transition-colors">Contact</Link>
+            <Link to="/hiring" className="text-gray-300 text-xl hover:text-white transition-colors">Hiring</Link>
+          </div>
+        )}
 
         <Routes>
           <Route path="/" element={
@@ -199,8 +303,9 @@ function App() {
                         stiffness: 100 
                       }}
                     >
-                      Empowering Businesses  
-                      <br />with Cutting-Edge Tech Solutions
+                       {displayedText}
+                      {/* Empowering Businesses  
+                      <br />with Cutting-Edge Tech Solutions */}
                     </motion.h1>
                     <motion.p 
                       className="p-color text-xl mb-8 max-w-2xl mx-auto"
@@ -220,7 +325,7 @@ function App() {
                       transition={{ duration: 0.8, delay: 0.8 }}
                       onClick={scrollToServices}
                     >
-                      Get Started <ArrowRight className="w-5 h-5" />
+                      Get Free Consultation <ArrowRight className="w-5 h-5" />
                     </motion.button>
                   </motion.div>
                 </div>
@@ -239,8 +344,8 @@ function App() {
                     />
                     <FeatureCard
                       icon={Cpu}
-                      title="Technology Solutions"
-                      description="As technology extends beyond traditional spaces—into cars, handheld devices, and even the beach—the demand for mobile apps has surged, driving an unprecedented wave of innovation and development."
+                      title="Career Consulting"
+                      description="Our career consulting services help professionals navigate their tech careers with expert guidance on skill development, job search strategies, interview preparation, and career advancement opportunities in the ever-evolving technology landscape."
                     />
                     <FeatureCard
                       icon={Database}
@@ -309,7 +414,7 @@ function App() {
                   {/* New Tabs Implementation */}
                   <div className="mb-8">
                     <div className="flex justify-center space-x-4 mb-8">
-                      {['Data Science', 'Full Stack', 'DevOps'].map((tab, index) => (
+                      {['Full Stack', 'Data Science', 'DevOps'].map((tab, index) => (
                         <motion.button
                           key={tab}
                           whileHover={{ scale: 1.05 }}
@@ -339,7 +444,7 @@ function App() {
                           transition={{ duration: 0.5 }}
                           className="grid grid-cols-6 gap-4 p-8 bg-gray-900/80 h-full"
                         >
-                          {dataScience.map((item, index) => (
+                          {fullStack.map((item, index) => (
                             <motion.div
                               key={index}
                               initial={{ opacity: 0, scale: 0.8 }}
@@ -361,7 +466,7 @@ function App() {
                           transition={{ duration: 0.5 }}
                           className="grid grid-cols-6 gap-4 p-8 bg-gray-900/80 h-full"
                         >
-                          {fullStack.map((item, index) => (
+                          {dataScience.map((item, index) => (
                             <motion.div
                               key={index}
                               initial={{ opacity: 0, scale: 0.8 }}
@@ -407,6 +512,10 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/hiring" element={<Hiring />} />
+          <Route path="/apply/frontend-developer" element={<Positions title={frontend.title} descriptions={frontend?.description} />} />
+          <Route path="/apply/backend-developer" element={<Positions title={backend.title} descriptions={backend?.description} />} />
+        
         </Routes>
 
         <Footer />

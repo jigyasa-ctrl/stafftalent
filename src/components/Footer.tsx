@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from "../../assets/logo4.png"
 
 export function Footer() {
@@ -8,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Logo and Description */}
           <div className="col-span-1">
-            <img src={logo} alt="AIQWIP Logo" className="h-12 mb-6" />
+            <img src={logo} alt="staff talents Logo" className="h-12 mb-6" />
             <p className="text-gray-400 mb-6">
               Empowering Businesses with Cutting-Edge AI Solutions, Data Analytics, and Future-Ready Innovation.
             </p>
@@ -21,9 +20,9 @@ export function Footer() {
               <p className="mb-2">STAFF TALENTS</p>
               <p className="mb-4">4914 Francistown rd
               Glen Allen, Va, 23060<br />Richmond, VA</p>
-              <a href="mailto:info@aiqwip.com" className="hover:text-white transition-colors">info@aiqwip.com</a>
+              <a href="mailto:hr@stafftalentssolutions.com" className="hover:text-white transition-colors">hr@stafftalentssolutions.com</a>
               <p className="mt-2">
-                <a href="tel:+918050130728" className="hover:text-white transition-colors">+91 8050130728</a>
+                <a href="tel:+1 (318) 500-3479" className="hover:text-white transition-colors">+1 (318) 500-3479</a>
               </p>
             </div>
           </div>

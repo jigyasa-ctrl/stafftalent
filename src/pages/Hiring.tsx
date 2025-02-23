@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import code from "../../assets/code4.mp4"; // Ensure this import is present
+import { Link } from 'react-router-dom';
 
 const Hiring = () => {
   const [heroRef, heroInView] = useInView({
@@ -12,12 +13,12 @@ const Hiring = () => {
     {
       title: "Frontend Developer",
       description: "Looking for a skilled frontend developer to join our team.",
-      applyLink: "/apply/frontend-developer"
+      applyLink: "/frontend"
     },
     {
       title: "Backend Developer",
       description: "Seeking a backend developer with experience in Node.js.",
-      applyLink: "/apply/backend-developer"
+      applyLink: "/backend"
     },
     // Add more job openings as needed
   ];
@@ -83,10 +84,10 @@ const Hiring = () => {
         <h2 className="text-4xl font-bold gradient-text mb-8">Job Openings</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {jobOpenings.map((job, index) => (
-            <div key={index} className="bg-gray-800 p-4 rounded-lg cursor-pointer" onClick={() => window.location.href = job.applyLink}>
+            <Link to={job.applyLink} key={index} className="bg-gray-800 p-4 rounded-lg cursor-pointer">
               <h3 className="text-xl font-semibold text-white">{job.title}</h3>
               <p className="text-gray-300">{job.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

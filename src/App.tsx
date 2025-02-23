@@ -6,7 +6,11 @@ import { Footer } from './components/Footer';
 import { PytorchPlainWordmark,OracleOriginal,SalesforcePlain, GithubactionsOriginal,JenkinsOriginal, GitlabOriginal, GrafanaPlainWordmark, BitbucketOriginalWordmark, AmazonwebservicesPlainWordmark, NodejsPlainWordmark,  FlutterOriginal, MaterialuiPlain, LaravelOriginalWordmark,MysqlPlainWordmark,DjangoPlain, BootstrapPlainWordmark,AxiosPlainWordmark, PhpOriginal, ReactOriginal, Html5Original, AngularOriginal, FastapiPlain,  TensorflowLineWordmark, ApachesparkPlainWordmark, KerasPlainWordmark, MatlabPlain, NumpyPlainWordmark,MatplotlibPlainWordmark, PandasPlainWordmark } from 'devicons-react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import logo from '../assets/logo4.png'
-import code from "../assets/code3.mp4"
+import code from "../assets/code.mp4"
+import servicenow from "../assets/servicenow.png"
+import powerbi from "../assets/powerbi.png"
+import googlecloud from "../assets/googlecloud.png"
+import go from "../assets/go.png"
 
 // import PytorchOriginal from 'devicons-react/lib/icons/PytorchOr
 
@@ -187,10 +191,10 @@ function App() {
     <FlutterOriginal color='white' size="50" />,
     <NodejsPlainWordmark  color='white' size="100" />,
     <OracleOriginal  color='white' size="100" />,
-    <img src="./assets/servicenow.png" height={50} width={50} />,
-    <img src="./assets/powerbi.png" height={50} width={50} />,
-    <img src="./assets/googlecloud.png" height={50} width={50} />,
-    <img src="./assets/go.png" height={100} width={100} />,
+    <img src={servicenow} height={50} width={50} />,
+    <img src={powerbi} height={50} width={50} />,
+    <img src={googlecloud} height={50} width={50} />,
+    <img src={go} height={100} width={100} />,
     <SalesforcePlain size='100' />
   ]
   const devOps = [
@@ -294,7 +298,7 @@ function App() {
                     transition={{ duration: 1, delay: 0.2 }}
                   >
                     <motion.h1 
-                      className="text-5xl md:text-7xl font-bold mb-6 gradient-text text-glow"
+                      className="text-5xl md:text-7xl font-bold mb-6 text-glow"
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ 
@@ -350,12 +354,12 @@ function App() {
                     <FeatureCard
                       icon={Database}
                       title="Engineering Services"
-                      description="NIC delivers engineering and technical solutions tailored to your unique requirements. We take the time to understand your needs and craft strategic solutions that align with your goals and plans."
+                      description="We deliver engineering and technical solutions tailored to your unique requirements. We take the time to understand your needs and craft strategic solutions that align with your goals and plans."
                     />
                     <FeatureCard
                       icon={LineChart}
                       title="Training Solutions"
-                      description="In today's fast-paced business environment, market conditions can shift rapidly. NICInfotek ensures your team stays ahead by precisely assessing your needs and enhancing their technical skills, empowering them to adapt and excel."
+                      description="In today's fast-paced business environment, market conditions can shift rapidly. We ensure your team stays ahead by precisely assessing your needs and enhancing their technical skills, empowering them to adapt and excel."
                     />
                   </div>
                 </div>
@@ -513,8 +517,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/hiring" element={<Hiring />} />
-          <Route path="/apply/frontend-developer" element={<Positions title={frontend.title} descriptions={frontend?.description} />} />
-          <Route path="/apply/backend-developer" element={<Positions title={backend.title} descriptions={backend?.description} />} />
+          <Route path="/frontend" element={<Positions title={frontend.title} descriptions={frontend?.description} />} />
+          <Route path="/backend" element={<Positions title={backend.title} descriptions={backend?.description} />} />
         
         </Routes>
 

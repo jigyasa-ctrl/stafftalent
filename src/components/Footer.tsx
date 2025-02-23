@@ -1,4 +1,5 @@
 import logo from "../../assets/logo4.png"
+import { Link } from "react-router-dom"
 
 export function Footer() {
   return (
@@ -31,9 +32,11 @@ export function Footer() {
           <div className="col-span-1">
             <h3 className="text-xl font-bold mb-6">Company</h3>
             <ul className="space-y-3">
-              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to="/hiring" className="text-gray-400 hover:text-white transition-colors">Hiring</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -47,10 +50,10 @@ export function Footer() {
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" 
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-white transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.35C0 23.4.6 24 1.325 24h21.35C23.4 24 24 23.4 24 22.675V1.325C24 .6 23.4 0 22.675 0zm-3.15 12.025h-3.15v9.075h-4.5v-9.075h-2.25v-3.6h2.25v-2.65c0-2.1 1.25-3.25 3.1-3.25.875 0 1.625.065 1.85.095v2.15h-1.275c-1.05 0-1.25.5-1.25 1.25v1.65h3.15l-.45 3.6z"/>
                 </svg>
               </a>
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
@@ -66,9 +69,9 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400">© 2025 STAFFTALENTSLLC. All rights reserved</p>
-          <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors mt-4 md:mt-0">
+          <Link to="/contact"><a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors mt-4 md:mt-0">
             Privacy Policy
-          </a>
+          </a></Link>
         </div>
       </div>
     </footer>

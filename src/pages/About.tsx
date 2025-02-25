@@ -156,13 +156,13 @@ const About = () => {
         >
           <h3 className="text-2xl font-bold mb-4 text-white">Why Staff Talents</h3>
           <p className="text-gray-300 leading-relaxed">
-              Global capabilities and efficiencies deliver bottom-line IT benefits to Fortune 2000 and smaller organizations. Proprietary S3RSM process simplifies your operations to reduce risk, time, and cost. Our global presence and associations with trusted high-performing allies assure clients of efficient, effective and timely accomplishment of specified objectives.
+          At Staff Talents Solutions LLC, we are committed to providing top-tier IT services across a wide range of specialties, including network engineering, data science, data engineering, DevOps, business analysis, Scrum mastery, QA, full-stack development, and much more. With a focus on delivering innovative solutions, we specialize in crafting customized strategies to address the unique needs of businesses, enabling them to excel in an ever-evolving technological landscape.
             </p>
           <p className="text-gray-300 leading-relaxed mb-6">
-            Our Intellectual Property is the key to our clients' satisfaction. We have world-class business process experts and seasoned technology consultants dedicated to maximizing your ROI. As an IT company, we know "it's about the people" working with the technology, as much as it is the technology itself. So people-skills share our priority with motivation, expertise and client orientation.
+          In addition to our IT services, we offer comprehensive staffing solutions to help organizations find the right talent and achieve their goals. Our career consulting services provide valuable guidance to individuals, assisting them in navigating their professional journey with tailored career advice, job placement services, and interview coaching.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            For clients in a wide variety of industries, we have been employing, contracting, recruiting and training techStaff Talentsally competent people since 2004. We prepare our people, and will prepare yours, to work efficiently and effectively at optimal quality levels.
+          We prioritize AI-driven technologies as the cornerstone of our strategy, bringing cutting-edge innovations to our clients and empowering them to stay ahead in a competitive market. Whether you are a business looking to scale your technology infrastructure or an individual seeking to elevate your career, Staff Talents Solutions LLC is here to provide the expertise, support, and resources you need for success.
           </p>
         </motion.div>
       </div>
